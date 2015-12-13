@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +20,8 @@ namespace Screenshotr
 
         private string title;
 
+        private bool _show = true;
+
         void Start()
         {
             _canvas = new GameObject("Canvas");
@@ -37,7 +37,8 @@ namespace Screenshotr
 
         void OnGUI()
         {
-            _windowRect = GUILayout.Window(0, _windowRect, DoMyWindow, "Upload");
+            if(_show)
+                _windowRect = GUILayout.Window(0, _windowRect, DoMyWindow, "Upload");
         }
 
         void DoMyWindow(int windowID)
@@ -54,6 +55,7 @@ namespace Screenshotr
             if (GUILayout.Button("Upload to ParkitectNexus"))
             {
                 StartCoroutine(UploadScreenshot());
+                _show = false;
             }
             GUILayout.EndHorizontal();
 

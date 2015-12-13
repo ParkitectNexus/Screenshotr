@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.IO;
-using System.Net;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Screenshotr
 {
@@ -55,7 +51,7 @@ namespace Screenshotr
 
         void Update()
         {
-            if (Input.GetKeyUp(KeyCode.F11))
+            if (Input.GetKeyUp(KeyCode.F11) || (Input.GetKeyDown(KeyCode.LeftAlt) && Input.GetKeyUp(KeyCode.F11)))
             {
                 StartCoroutine(TakeScreenshot());
             }
