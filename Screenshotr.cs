@@ -12,7 +12,7 @@ namespace Screenshotr
 
         public static Screenshotr Instance;
 
-        private string _apiKey;
+        private string _apiKey = "";
 
         public string ApiKey
         {
