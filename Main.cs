@@ -21,7 +21,7 @@ namespace Screenshotr
 
         public string Name { get { return "Screenshotr"; } }
         public string Description { get { return "Upload screenshots to ParkitectNexus"; } }
-
+        public string Identifier { get; set; }
         public string Path { get; set; }
     }
 }
